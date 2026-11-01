@@ -235,3 +235,210 @@ button { font: inherit; }
 }
 
 
+/* =========================================================
+   RESPONSIVE ENHANCEMENTS
+   Added: tablet, mobile, small-mobile and touch refinements
+   ========================================================= */
+
+/* Prevent long content and media from forcing horizontal scroll */
+img, video, canvas, svg, iframe {
+  max-width: 100%;
+}
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+
+/* Tablet and compact laptop */
+@media (max-width: 1024px) {
+  .topbar { padding-inline: 4vw; }
+  .desktop-nav { gap: 18px; margin-right: 22px; }
+  .hero { padding-inline: 7vw; }
+  .hero-copy { width: min(680px, 82%); }
+  .profile-portrait-wrap { right: 0; width: 49%; }
+  .section-pad { padding-inline: 6vw; }
+  .project-grid { gap: 16px; }
+  .manifesto { gap: 5vw; }
+}
+
+/* Mobile navigation and stacked layouts */
+@media (max-width: 620px) {
+  html { scroll-padding-top: 70px; }
+  body { font-size: 14px; }
+
+  .topbar {
+    position: absolute;
+    height: 70px;
+    padding-inline: 5vw;
+  }
+  .brand { gap: 9px; }
+  .menu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+  }
+  .desktop-nav {
+    top: 69px;
+    padding: 22px 7vw 26px;
+    gap: 0;
+  }
+  .desktop-nav a {
+    display: block;
+    min-height: 44px;
+    padding-block: 14px;
+  }
+
+  .hero {
+    min-height: 700px;
+    min-height: max(700px, 92svh);
+    padding: 105px 7vw 95px;
+  }
+  .hero-copy { max-width: 100%; }
+  .hero h1 {
+    font-size: clamp(54px, 14.5vw, 86px);
+    overflow-wrap: anywhere;
+  }
+  .hero-description { max-width: 34ch; }
+  .hero-actions { width: 100%; gap: 18px; }
+  .hero-actions .button { width: min(100%, 280px); }
+  .hero-bottom { gap: 9px; font-size: 7px; }
+  .scroll-line { width: 35px; }
+  .hero-index { font-size: 8px; }
+
+  .section-pad { padding: 68px 7vw; }
+  .section-heading { margin-bottom: 30px; }
+  .section-heading h2,
+  .manifesto-copy h2 {
+    font-size: clamp(40px, 11.5vw, 62px);
+  }
+  .section-note { max-width: 42ch; }
+  .collection-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .project-grid { grid-template-columns: minmax(0, 1fr); }
+  .project-card { width: 100%; }
+  .poster-art { aspect-ratio: 1 / 1.05; }
+  .poster-title { font-size: clamp(40px, 11vw, 64px); }
+  .card-footer { gap: 12px; }
+  .card-footer strong { font-size: 14px; }
+
+  .manifesto { grid-template-columns: minmax(0, 1fr); }
+  .manifesto-orbit { width: min(68vw, 300px); }
+  .manifesto-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px 0;
+  }
+  .manifesto-stats div {
+    min-width: 0;
+    padding-inline: 10px;
+  }
+  .manifesto-stats strong { font-size: clamp(24px, 7vw, 32px); }
+  .manifesto-stats small {
+    font-size: 7px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .skills-grid { grid-template-columns: minmax(0, 1fr); }
+  .skill, .skill + .skill {
+    padding: 24px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .skill:last-child { border-bottom: 0; }
+  .skill p { max-width: 100%; }
+
+  .contact-top { align-items: flex-start; }
+  .contact-stamp { max-width: 125px; padding: 10px; }
+  .contact h2 {
+    font-size: clamp(48px, 13vw, 76px);
+    overflow-wrap: anywhere;
+  }
+  .contact-copy { max-width: 38ch; }
+  .contact-button { width: 100%; max-width: 280px; }
+  .contact-email-label {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .contact-email-label a { margin-left: 0; overflow-wrap: anywhere; }
+  .social-links { flex-wrap: wrap; gap: 16px; }
+  .contact-bottom { gap: 12px; }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .footer .brand { width: auto; margin-right: 0; }
+  .back-top { margin-right: 0; }
+
+  .project-modal { padding: 12px; }
+  .modal-panel {
+    width: 100%;
+    max-height: 90svh;
+    overflow-y: auto;
+    padding: 28px 22px;
+  }
+  .modal-meta { grid-template-columns: 65px minmax(0, 1fr); }
+  .live-project-btn { max-width: 100%; }
+  .education-item { grid-template-columns: 48px minmax(0, 1fr) 18px; gap: 10px; }
+  .education-details { min-width: 0; }
+  .education-school { overflow-wrap: anywhere; }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .brand { font-size: 8px; }
+  .brand-mark { font-size: 25px; }
+  .hero { padding-inline: 6vw; }
+  .hero h1 { font-size: clamp(48px, 14vw, 58px); }
+  .hero-description { font-size: 12px; }
+  .section-pad { padding-inline: 6vw; }
+  .manifesto-stats { grid-template-columns: 1fr; }
+  .manifesto-stats div,
+  .manifesto-stats div:first-child {
+    padding: 0 0 12px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .manifesto-stats div:last-child { border-bottom: 0; }
+  .contact-stamp { font-size: 7px; }
+}
+
+/* Landscape phones */
+@media (max-width: 900px) and (orientation: landscape) {
+  .hero {
+    min-height: 620px;
+    height: auto;
+    padding-top: 110px;
+    padding-bottom: 90px;
+  }
+  .profile-portrait-wrap { height: 78%; }
+}
+
+/* Touch devices: avoid hover-only interactions */
+@media (hover: none) {
+  .project-card:hover .poster-art,
+  .education-item:hover {
+    transform: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .button:hover,
+  .live-project-btn:hover { transform: none; }
+}
+
+/* Keep animations comfortable for users who request reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
